@@ -278,7 +278,7 @@ class DropdownSearchPopupState<T> extends State<DropdownSearchPopup<T>> {
 
   ///validation of selected items
   void onValidate() {
-    closePopup();
+    closePopup(context);
     if (widget.onChanged != null) widget.onChanged!(_selectedItems);
   }
 
@@ -505,7 +505,8 @@ class DropdownSearchPopupState<T> extends State<DropdownSearchPopup<T>> {
     }
   }
 
-  bool _isDisabled(T item) => widget.popupProps.disabledItemFn?.call(item) == true;
+  bool _isDisabled(T item) =>
+      widget.popupProps.disabledItemFn?.call(item) == true;
 
   /// selected item will be highlighted only when [widget.showSelectedItems] is true,
   /// if our object is String [widget.compareFn] is not required , other wises it's required
@@ -710,7 +711,7 @@ class DropdownSearchPopupState<T> extends State<DropdownSearchPopup<T>> {
         }
       }
     } else {
-      closePopup();
+      closePopup(context);
       if (widget.onChanged != null) {
         widget.onChanged!(List.filled(1, newSelectedItem));
       }
@@ -780,7 +781,7 @@ class DropdownSearchPopupState<T> extends State<DropdownSearchPopup<T>> {
   }
 
   ///close popup
-  void closePopup() => Navigator.pop(context);
+  void closePopup(BuildContext context) => Navigator.pop(context);
 
   void selectAllItems() => selectItems(_currentShowedItems);
 

@@ -770,7 +770,7 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
 
   @override
   void dispose() {
-    _popupStateKey.currentState?.closePopup();
+    _popupStateKey.currentState?.closePopup(context);
     super.dispose();
   }
 
@@ -835,7 +835,7 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
 
   ///validate selected items programmatically passed in param [itemsToValidate]
   void popupValidate(List<T> itemsToValidate) {
-    closeDropDownSearch();
+    closeDropDownSearch(context);
     changeSelectedItems(itemsToValidate);
   }
 
@@ -851,7 +851,8 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
   DropdownSearchPopupState<T>? get getPopupState => _popupStateKey.currentState;
 
   ///close dropdownSearch popup if it's open
-  void closeDropDownSearch() => _popupStateKey.currentState?.closePopup();
+  void closeDropDownSearch(BuildContext context) =>
+      _popupStateKey.currentState?.closePopup(context);
 
   ///returns true if all popup's items are selected; other wise False
   bool get popupIsAllItemSelected =>

@@ -201,7 +201,7 @@ class _ModalsExamplesPageState extends State<ModalsExamplesPage> {
                                 onPressed: () {
                                   // How should I unselect all items in the list?
                                   _dropDownCustomBGKey.currentState
-                                      ?.closeDropDownSearch();
+                                      ?.closeDropDownSearch(ctx);
                                 },
                                 child: const Text('Cancel'),
                               ),

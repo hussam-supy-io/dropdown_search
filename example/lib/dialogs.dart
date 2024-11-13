@@ -200,7 +200,7 @@ class _DialogExamplesPageState extends State<DialogExamplesPage> {
                                       onPressed: () {
                                         // How should I unselect all items in the list?
                                         _dropDownCustomBGKey.currentState
-                                            ?.closeDropDownSearch();
+                                            ?.closeDropDownSearch(ctx);
                                       },
                                       child: const Text('Cancel'),
                                     ),
