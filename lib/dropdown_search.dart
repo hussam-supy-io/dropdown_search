@@ -770,7 +770,6 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
 
   @override
   void dispose() {
-    _popupStateKey.currentState?.closePopup(context);
     super.dispose();
   }
 
