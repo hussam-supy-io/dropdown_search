@@ -768,11 +768,6 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
     _handleFocus(false);
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   ///Change selected Value; this function is public USED to change the selected
   ///value PROGRAMMATICALLY, Otherwise you can use [_handleOnChangeSelectedItems]
   ///for multiSelection mode you can use [changeSelectedItems]
